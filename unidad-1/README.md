@@ -2,8 +2,6 @@
 ### Practices
 
 
-- [Data mining - Unit 1](#data-mining---unit-1)
-    - [Practices](#practices)
   - [Practice 1 - Law Of Large Numbers](#practice-1---law-of-large-numbers)
   - [R functions](#r-functions)
 
