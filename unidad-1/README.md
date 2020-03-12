@@ -5,7 +5,7 @@
   - [Practice 1 - Law Of Large Numbers](#practice-1---law-of-large-numbers)
   - [R functions](#r-functions)
   - [Practice 3 - Revenue analysis](#practice-3-revenue-analysis)
-  - [Practice 4 - Revenue analysis](#practice-4-revenue-analysis)
+  - [Practice 4 - Basketball data analysis](#practice-4-basketball-data-analysis)
   - [Practice 5 - Filter excercise](#practice-5-filter-excercise)
 ## Practice 1 - Law Of Large Numbers
 The objective of this exersice is to practice the fundamentals of R langage. 
@@ -131,21 +131,7 @@ draws a vertical line at abcissa x
 abline(v=x)
 ```
 
-## Practice 3 - Revenue analysis
-# x - profit for each mounth 
-# x - profit after tax for each month (the tax rate is 30%)
-# x- profit margin for each month - equal to profit after tax divided by revenue
-# x- good months - where the profit after tax was greater than the mean for the year
-# x- bad months - where the profit after tax was less then the mean for years
-# x- the best month - where the profit after tax was max for the year
-# x- the worst month - where the profit after tax was min for the year
-
-# All results need to be presented as vectors.
-
-# Results for dollar values need to be calculate with $0.01 precision, but need to be
-# presented in Units of $1,000(i.e. 1k) with no decimal point.
-
-
+## Practice 3 - revenue analysis
 These vectors contain a sample of data and will be the data were are analising
 ```R
 revenue <- c(14574.49, 7606.46, 8611.41, 9175.41, 8058.65, 8105.44, 11496.28, 9766.09, 10305.32, 14379.96, 10713.97, 15433.50)
@@ -230,7 +216,8 @@ bestMonth
 worstMonth
 ```
 
-## Practice 4 - Revenue analysis
+## Practice 4 - Basketball data analysis
+
 You have been supplied data for two more additional in-game statistics:
 * Free Throws
 * Free Throws Attempts
