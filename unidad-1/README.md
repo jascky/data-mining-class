@@ -4,9 +4,9 @@
 
   - [Practice 1 - Law Of Large Numbers](#practice-1---law-of-large-numbers)
   - [R functions](#r-functions)
-  - [Practice 3 - Revenue analysis](#practice-3-revenue-analysis)
-  - [Practice 4 - Basketball data analysis](#practice-4-basketball-data-analysis)
-  - [Practice 5 - Filter excercise](#practice-5-filter-excercise)
+  - [Practice 3 - Revenue analysis](#practice-3---revenue-analysis)
+  - [Practice 4 - Basketball data analysis](#practice-4---basketball-data-analysis)
+  - [Practice 5 - Filter excercise](#practice-5---filter-excercise)
 ## Practice 1 - Law Of Large Numbers
 The objective of this exersice is to practice the fundamentals of R langage. 
 The pratice consists of creating an R script that will count how many N random normally distributed numbers with mean = 0, stdev=1 fall between -1 and 1 and divide.
