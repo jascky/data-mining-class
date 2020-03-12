@@ -5,6 +5,8 @@
   - [Practice 1 - Law Of Large Numbers](#practice-1---law-of-large-numbers)
   - [R functions](#r-functions)
   - [Practice 3 - Revenue analysis](#practice-3-revenue-analysis)
+  - [Practice 4 - Revenue analysis](#practice-4-revenue-analysis)
+  - [Practice 5 - Filter excercise](#practice-5-filter-excercise)
 ## Practice 1 - Law Of Large Numbers
 The objective of this exersice is to practice the fundamentals of R langage. 
 The pratice consists of creating an R script that will count how many N random normally distributed numbers with mean = 0, stdev=1 fall between -1 and 1 and divide.
@@ -226,4 +228,127 @@ goodMonths
 badMonths
 bestMonth
 worstMonth
+```
+
+## Practice 4 - Revenue analysis
+You have been supplied data for two more additional in-game statistics:
+* Free Throws
+* Free Throws Attempts
+
+You need to create three plots that portray the following insights:
+* Free Throw Attempts per game
+* Accurancy of Free Throws
+* Player playing style (2 vs 3 points preference) excluding Free Throws
+
+- Each Free Throw is worth 1 point
+
+The data has been supplied in the form of vectors. You will have to create
+two matrices before you proceed with the analysis.
+
+```r
+
+#Free Trows
+KobeBryant_FT <- c(696,667,623,483,439,483,381,525,18,196)
+JoeJohnson_FT <- c(261,235,316,299,220,195,158,132,159,141)
+LeBronJames_FT <- c(601,489,549,594,593,503,387,403,439,375)
+CarmeloAnthony_FT <- c(573,459,464,371,508,507,295,425,459,189)
+DwightHoward_FT <- c(356,390,529,504,483,546,281,355,349,143)
+ChrisBosh_FT <- c(474,463,472,504,470,384,229,241,223,179)
+ChrisPaul_FT <- c(394,292,332,455,161,337,260,286,295,289)
+KevinDurant_FT <- c(209,209,391,452,756,594,431,679,703,146)
+DerrickRose_FT <- c(146,146,146,197,259,476,194,0,27,152)
+DwayneWade_FT <- c(629,432,354,590,534,494,235,308,189,284)
+#Matrix for Free Throws
+#Bind the given vectors to form the matrix
+FreeThrows <- rbind(KobeBryant_FT, JoeJohnson_FT, LeBronJames_FT, CarmeloAnthony_FT, DwightHoward_FT, ChrisBosh_FT, ChrisPaul_FT, KevinDurant_FT, DerrickRose_FT, DwayneWade_FT)
+#Remove vectors - we don't need them anymore
+rm(KobeBryant_FT, JoeJohnson_FT, CarmeloAnthony_FT, DwightHoward_FT, ChrisBosh_FT, LeBronJames_FT, ChrisPaul_FT, DerrickRose_FT, DwayneWade_FT, KevinDurant_FT)
+#Rename the columns
+colnames(FreeThrows) <- Seasons
+#Rename the rows
+rownames(FreeThrows) <- Players
+
+#Check the matrix
+FreeThrows
+
+#Free Trows Attempts
+KobeBryant_FTA <- c(819,768,742,564,541,583,451,626,21,241)
+JoeJohnson_FTA <- c(330,314,379,362,269,243,186,161,195,176)
+LeBronJames_FTA <- c(814,701,771,762,773,663,502,535,585,528)
+CarmeloAnthony_FTA <- c(709,568,590,468,612,605,367,512,541,237)
+DwightHoward_FTA <- c(598,666,897,849,816,916,572,721,638,271)
+ChrisBosh_FTA <- c(581,590,559,617,590,471,279,302,272,232)
+ChrisPaul_FTA <- c(465,357,390,524,190,384,302,323,345,321)
+KevinDurant_FTA <- c(256,256,448,524,840,675,501,750,805,171)
+DerrickRose_FTA <- c(205,205,205,250,338,555,239,0,32,187)
+DwayneWade_FTA <- c(803,535,467,771,702,652,297,425,258,370)
+#Matrix for Free Throw Attempts
+#Bind the given vectors to form the matrix
+FreeThrowAttempts <- rbind(KobeBryant_FTA, JoeJohnson_FTA, LeBronJames_FTA, CarmeloAnthony_FTA, DwightHoward_FTA, ChrisBosh_FTA, ChrisPaul_FTA, KevinDurant_FTA, DerrickRose_FTA, DwayneWade_FTA)
+#Remove vectors - we don't need them anymore
+rm(KobeBryant_FTA, JoeJohnson_FTA, CarmeloAnthony_FTA, DwightHoward_FTA, ChrisBosh_FTA, LeBronJames_FTA, ChrisPaul_FTA, DerrickRose_FTA, DwayneWade_FTA, KevinDurant_FTA)
+#Rename the columns
+colnames(FreeThrowAttempts) <- Seasons
+#Rename the rows
+rownames(FreeThrowAttempts) <- Players
+
+#Check the matrix
+FreeThrowAttempts
+
+#Re-create the plotting function
+myplot <- function(z, who=1:10) {
+  matplot(t(z[who,,drop=F]), type="b", pch=15:18, col=c(1:4,6), main="Basketball Players Analysis")
+  legend("bottomleft", inset=0.01, legend=Players[who], col=c(1:4,6), pch=15:18, horiz=F)
+}
+
+#Visualize the new matrices
+myplot(FreeThrows)
+myplot(FreeThrowAttempts)
+
+#Part 1 - Free Throw Attempts Per Game 
+#(You will need the Games matrix)
+myplot(FreeThrowAttempts/Games)
+#Notice how Chris Paul gets fewer attempts per game
+
+#Part 2 - Free Throw Accuracy
+myplot(FreeThrows/FreeThrowAttempts)
+#And yet Chris Paul's accuracy is one of the highest
+#Chances are his team would get more points if he had more FTA's
+#Also notice that Dwight Howard's FT Accuracy is extremely poor
+#compared to other players. If you recall, Dwight Howard's
+#Field Goal Accuracy was exceptional:
+myplot(FieldGoals/FieldGoalAttempts)
+#How could this be? Why is there such a drastic difference?
+#We will see just now...
+```
+
+## Practice 5 - Filter excercise
+
+Filter countries by Low income
+```r
+stats[stats$Income.Group == "Low income", "Country.Name", drop=F]
+```
+Filter countries by Lower middle income
+```r
+stats[stats$Income.Group == "Lower middle income", "Country.Name", drop=F]
+```
+Filter countries by Upper middle income
+```r
+stats[stats$Income.Group == "Upper middle income", "Country.Name", drop=F]
+```
+Filter by countrie Malta
+```r
+stats[stats$Country.Name == "Malta",]
+```
+Filter by countrie Qatar
+```r
+stats[stats$Country.Name == "Qatar",]
+```
+Filter by countrie Netherlands
+```r
+stats[stats$Country.Name == "Netherlands",]
+```
+Filter by countrie Norway
+```r
+stats[stats$Country.Name == "Norway",]
 ```
