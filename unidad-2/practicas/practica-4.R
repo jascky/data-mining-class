@@ -3,7 +3,7 @@ setwd("/Users/jasc/Documents/9no/data-mining-class/unidad-2/practicas")
 getwd()
 
 # Importing the dataset
-dataset <- read.csv('creadir_card.csv')
+dataset <- read.csv('credit_card.csv')
 dataset <- dataset[, 3:5]
 
 # Splitting the dataset into the Training set and Test set
