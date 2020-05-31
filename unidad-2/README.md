@@ -3,9 +3,10 @@
 
   - [Practice 1 - Simple Linear Regression](#practice-1---simple-linear-regression)
   - [Practice 2 - Multiple Linear Regression](#practice-2---multiple-linear-regression)
-  - [Practice 3 - Revenue analysis](#practice-3---revenue-analysis)
-  - [Practice 4 - Basketball data analysis](#practice-4---basketball-data-analysis)
-  - [Practice 5 - Filter excercise](#practice-5---filter-excercise)
+  - [Practice 3 - Backward eliminaiton](#practice-3---backward-eliminaiton)
+  - [Practice 4 - Logistic regression](#practice-4---logistic-regression)
+  - [Practice 5 -  Supprt Vector Machine](#practice-5---supprt-vector-machine)
+  - [Practice 6 -  Desicion tree](#practice-6---desicion-tree)
 
 ## Practice 1 - Simple Linear Regression		
 Simple linear regression is useful for finding relationship between two continuous variables. One is predictor or independent variable and other is response or dependent variable.
@@ -101,7 +102,7 @@ training_set
 backwardElimination(training_set, SL)
 ```
 
-## Practice 4 -  Logistic regression
+## Practice 4 - Logistic regression
 In statistics, the logistic model (or logit model) is used to model the probability of a certain class or event existing such as pass/fail, win/lose, alive/dead or healthy/sick. This can be extended to model several classes of events such as determining whether an image contains a cat, dog, lion, etc. Each object being detected in the image would be assigned a probability between 0 and 1 and the sum adding to one.
 
 Splitting the dataset into the Training set and Test set
@@ -139,7 +140,7 @@ cm = table(test_set[, 3], y_pred)
 cm
 ```
 
-## Practice 5 -  Supprt Vector Machine (SVM)
+## Practice 5 -  Supprt Vector Machine
 In machine learning, support-vector machines are supervised learning models with associated learning algorithms that analyze data used for classification and regression analysis. Given a set of training examples, each marked as belonging to one or the other of two categories, an SVM training algorithm builds a model that assigns new examples to one category or the other, making it a non-probabilistic binary linear classifier.
 
 
