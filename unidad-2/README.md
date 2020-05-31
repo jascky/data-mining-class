@@ -71,7 +71,7 @@ summary(regressor)
 y_pred = predict(regressor, newdata = test_set)
 ```
 
-## Practice 3 -  Backward eliminaiton
+## Practice 3 - Backward eliminaiton
 When building a machine learning model, it is very important that we select only those features or predictors which are necessary.
 There are various ways in which you can find out which features have very little impact on the model and which ones you can remove from your dataset. 
 Backward Elimination is a technique that will help us with this task.
@@ -140,7 +140,7 @@ cm = table(test_set[, 3], y_pred)
 cm
 ```
 
-## Practice 5 -  Supprt Vector Machine
+## Practice 5 - Supprt Vector Machine
 In machine learning, support-vector machines are supervised learning models with associated learning algorithms that analyze data used for classification and regression analysis. Given a set of training examples, each marked as belonging to one or the other of two categories, an SVM training algorithm builds a model that assigns new examples to one category or the other, making it a non-probabilistic binary linear classifier.
 
 
@@ -178,7 +178,7 @@ cm = table(test_set[, 3], y_pred)
 cm
 ```
 
-## Practice 6 -  Desicion tree
+## Practice 6 - Desicion tree
 Decision tree learning is one of the predictive modelling approaches used in statistics, data mining and machine learning. It uses a decision tree (as a predictive model) to go from observations about an item (represented in the branches) to conclusions about the item's target value (represented in the leaves).
 
 Splitting the dataset into the Training set and Test set
