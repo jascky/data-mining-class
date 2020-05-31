@@ -29,7 +29,7 @@ ggplot() +
   ylab('GPA')
 
 ggplot() +
-  geom_point(aes(x=test_set$YearsExperience, y=test_set$Salary),
+  geom_point(aes(x=test_set$Sat, y=test_set$Gpa),
              color = 'red') +
   geom_line(aes(x = training_set$Sat, y = predict(regressor, newdata = training_set)),
             color = 'blue') +
