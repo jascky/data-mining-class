@@ -10,7 +10,7 @@ dataset <- dataset[, 3:5]
 # Install.packages('caTools')
 library(caTools)
 set.seed(123)
-split <- sample.split(dataset$Sold, SplitRatio = 0.75)
+split <- sample.split(dataset$Debt, SplitRatio = 0.75)
 training_set <- subset(dataset, split == TRUE)
 test_set <- subset(dataset, split == FALSE)
 
@@ -19,7 +19,7 @@ training_set[, 1:2] <- scale(training_set[, 1:2])
 test_set[, 1:2] <- scale(test_set[, 1:2])
 
 # Fitting Logistic Regression to Training set
-classifier = glm(formula = Sold ~ .,
+classifier = glm(formula = Debt ~ .,
                  family = binomial,
                  data = training_set)
 
@@ -35,16 +35,16 @@ cm
 
 # 
 library(ggplot2)
-ggplot(training_set, aes(x=Income, y=Sold)) + geom_point() + 
+ggplot(training_set, aes(x=Income, y=Debt)) + geom_point() + 
   stat_smooth(method="glm", method.args=list(family="binomial"), se=FALSE)
 
-ggplot(training_set, aes(x=Age, y=Sold)) + geom_point() + 
+ggplot(training_set, aes(x=Age, y=Debt)) + geom_point() + 
   stat_smooth(method="glm", method.args=list(family="binomial"), se=FALSE)
 
-ggplot(test_set, aes(x=Income, y=Sold)) + geom_point() + 
+ggplot(test_set, aes(x=Income, y=Debt)) + geom_point() + 
   stat_smooth(method="glm", method.args=list(family="binomial"), se=FALSE)
 
-ggplot(test_set, aes(x=Age, y=Sold)) + geom_point() + 
+ggplot(test_set, aes(x=Age, y=Debt)) + geom_point() + 
   stat_smooth(method="glm", method.args=list(family="binomial"), se=FALSE)
 
 # Visualization the Training set result

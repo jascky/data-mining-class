@@ -31,6 +31,10 @@ Predicting the Test set results
 ```R
 y_pred = predict(regressor, newdata = test_set)
 ```
+Results
+![linear-regression](https://user-images.githubusercontent.com/32521204/83341622-310fbe00-a29a-11ea-99cc-f72d91e1d270.png)
+
+---
 
 ## Practice 2 - Multiple Linear Regression	
 Multiple linear regression (MLR), also known simply as multiple regression, is a statistical technique that uses several explanatory variables to predict the outcome of a response variable. The goal of multiple linear regression (MLR) is to model the linear relationship between the explanatory (independent) variables and response (dependent) variable.
@@ -139,6 +143,10 @@ Making the Confusion Metrix
 cm = table(test_set[, 3], y_pred)
 cm
 ```
+Results
+![logistic-regression](https://user-images.githubusercontent.com/32521204/83341731-a4fe9600-a29b-11ea-8223-3aac17a34669.png)
+
+
 
 ## Practice 5 - Supprt Vector Machine
 In machine learning, support-vector machines are supervised learning models with associated learning algorithms that analyze data used for classification and regression analysis. Given a set of training examples, each marked as belonging to one or the other of two categories, an SVM training algorithm builds a model that assigns new examples to one category or the other, making it a non-probabilistic binary linear classifier.
