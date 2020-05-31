@@ -32,7 +32,7 @@ Predicting the Test set results
 y_pred = predict(regressor, newdata = test_set)
 ```
 
-## Practice 2 -  Multiple Linear Regression	
+## Practice 2 - Multiple Linear Regression	
 Multiple linear regression (MLR), also known simply as multiple regression, is a statistical technique that uses several explanatory variables to predict the outcome of a response variable. The goal of multiple linear regression (MLR) is to model the linear relationship between the explanatory (independent) variables and response (dependent) variable.
 
 We'll start spliting our data set in a 80 - 20 split ratio for out training and test sets.
