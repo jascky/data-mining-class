@@ -1,26 +1,15 @@
-# Data mining - Unit 4
-
-## Evaluation - Kmeans
-implement kmeans in iris.csv dataset 
-
-
-
 # K-Means Clustering
-Set our workspace
-```R
+# Set our workspace
 getwd()
 setwd("/Users/jasc/Documents/9no/data-mining-class/unidad-4/evaluacion")
 getwd()
-```
 
-Importing the dataset
-```R
+# Importing the dataset
 dataset = read.csv('iris.csv')
 dataset = dataset[1:4]
-```
 
-Using the elbow method to find the optimal number of clusters
-```R
+
+# Using the elbow method to find the optimal number of clusters
 set.seed(6)
 wcss = vector()
 for (i in 1:10) wcss[i] = sum(kmeans(dataset, i)$withinss)
@@ -30,17 +19,14 @@ plot(1:10,
      main = paste('The Elbow Method'),
      xlab = 'Number of clusters',
      ylab = 'WCSS')
-```
-Fitting K-Means to the dataset
-```R
+
+# Fitting K-Means to the dataset
 set.seed(29)
 kmeans = kmeans(x = dataset, centers = 3)
 y_kmeans = kmeans$cluster
-```
-Visualising the clusters
-```R
-install.packages('cluster')
 
+# Visualising the clusters
+# install.packages('cluster')
 library(cluster)
 clusplot(dataset,
          y_kmeans,
@@ -53,4 +39,3 @@ clusplot(dataset,
          main = paste('Clusters of species'),
          xlab = 'Annual Income',
          ylab = 'Spending Score')
-```
